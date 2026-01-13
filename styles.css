@@ -467,6 +467,12 @@ section {
     min-height: 120px;
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-gray);
+    opacity: 0.6;
+}
+
 /* Footer */
 .footer {
     background: var(--deep-blue);

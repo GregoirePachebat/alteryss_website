@@ -118,7 +118,9 @@ if (contactForm) {
         setTimeout(() => {
             successMessage.style.animation = 'slideOutRight 0.5s ease';
             setTimeout(() => {
-                document.body.removeChild(successMessage);
+                if (successMessage.parentNode) {
+                    document.body.removeChild(successMessage);
+                }
             }, 500);
         }, 5000);
     });
@@ -173,7 +175,7 @@ window.addEventListener('scroll', () => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         
-        if (pageYOffset >= (sectionTop - 100)) {
+        if (window.pageYOffset >= (sectionTop - 100)) {
             current = section.getAttribute('id');
         }
     });
