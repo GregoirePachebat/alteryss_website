@@ -232,6 +232,9 @@ const translations = {
             navigation: "Navigation",
             social: "Follow us",
             copyright: "© 2024 Alteryss. All rights reserved. Committed to a sustainable future."
+        },
+        messages: {
+            formSuccess: "Thank you for your message! We will respond to you soon."
         }
     },
     fr: {
@@ -463,6 +466,9 @@ const translations = {
             navigation: "Navigation",
             social: "Suivez-nous",
             copyright: "© 2024 Alteryss. Tous droits réservés. Engagés pour un avenir durable."
+        },
+        messages: {
+            formSuccess: "Merci pour votre message ! Nous vous répondrons bientôt."
         }
     }
 };
@@ -496,8 +502,8 @@ function setLanguage(lang) {
         const key = element.getAttribute('data-i18n');
         const translation = getTranslation(lang, key);
         
-        // Check if the translation contains HTML
-        if (translation.includes('<strong>') || translation.includes('<a')) {
+        // Check if the translation contains HTML tags
+        if (/<[^>]+>/.test(translation)) {
             element.innerHTML = translation;
         } else {
             element.textContent = translation;
@@ -668,9 +674,7 @@ if (contactForm) {
         
         // Use translated message
         const currentLang = window.currentLanguage || localStorage.getItem('language') || 'en';
-        const successText = currentLang === 'fr' 
-            ? 'Merci pour votre message ! Nous vous répondrons bientôt.' 
-            : 'Thank you for your message! We will respond to you soon.';
+        const successText = getTranslation(currentLang, 'messages.formSuccess');
         successMessage.textContent = successText;
         
         document.body.appendChild(successMessage);
@@ -756,8 +760,8 @@ window.addEventListener('scroll', () => {
 const currentLangForConsole = localStorage.getItem('language') || 'en';
 if (currentLangForConsole === 'fr') {
     console.log('%cBienvenue sur Alteryss ! 🌱', 'color: #10b981; font-size: 20px; font-weight: bold;');
-    console.log('%cL\'innovation technologique au service de l\'environnement', 'color: #06b6d4; font-size: 14px;');
+    console.log('%cL\'innovation technologique au service de la performance humaine', 'color: #06b6d4; font-size: 14px;');
 } else {
     console.log('%cWelcome to Alteryss ! 🌱', 'color: #10b981; font-size: 20px; font-weight: bold;');
-    console.log('%cTechnological innovation for the environment', 'color: #06b6d4; font-size: 14px;');
+    console.log('%cTechnological innovation for human performance', 'color: #06b6d4; font-size: 14px;');
 }
