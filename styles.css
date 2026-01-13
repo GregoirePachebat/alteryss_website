@@ -18,6 +18,14 @@
     --text-gray: #cbd5e1;
     --white: #ffffff;
     
+    /* Mountain & Harsh Conditions Colors */
+    --mountain-white: #f0f4f8;
+    --ice-blue: #d0e7f5;
+    --rock-gray: #64748b;
+    --deep-ocean: #082f49;
+    --frost-white: #e8f4f8;
+    --stone-dark: #475569;
+    
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -64,7 +72,7 @@ body {
     z-index: 1000;
     padding: var(--spacing-sm) 0;
     border-bottom: 2px solid var(--primary-green);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(16, 185, 129, 0.2);
 }
 
 .navbar .container {
@@ -142,8 +150,48 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--deep-blue) 0%, var(--medium-blue) 100%);
+    background: 
+        linear-gradient(180deg, var(--deep-ocean) 0%, var(--deep-blue) 40%, var(--medium-blue) 70%, var(--ice-blue) 100%);
     padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Mountain backdrop */
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: 
+        linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.3) 100%);
+    z-index: 0;
+}
+
+/* Mountain peaks using CSS */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: 
+        /* First mountain range - back */
+        linear-gradient(120deg, transparent 20%, var(--stone-dark) 20%, var(--stone-dark) 30%, transparent 30%),
+        linear-gradient(60deg, transparent 40%, var(--rock-gray) 40%, var(--rock-gray) 55%, transparent 55%),
+        linear-gradient(135deg, transparent 60%, var(--medium-blue) 60%, var(--medium-blue) 75%, transparent 75%),
+        /* Second mountain range - middle */
+        linear-gradient(110deg, transparent 5%, var(--light-blue) 5%, var(--light-blue) 18%, transparent 18%),
+        linear-gradient(70deg, transparent 25%, var(--stone-dark) 25%, var(--stone-dark) 42%, transparent 42%),
+        linear-gradient(130deg, transparent 50%, var(--rock-gray) 50%, var(--rock-gray) 68%, transparent 68%),
+        /* Front mountain range with snow caps */
+        linear-gradient(115deg, transparent 0%, var(--light-blue) 0%, var(--light-blue) 12%, var(--frost-white) 12%, var(--frost-white) 13%, var(--light-blue) 13%, var(--light-blue) 15%, transparent 15%),
+        linear-gradient(65deg, transparent 15%, var(--stone-dark) 15%, var(--stone-dark) 32%, var(--mountain-white) 32%, var(--mountain-white) 33%, var(--stone-dark) 33%, var(--stone-dark) 35%, transparent 35%),
+        linear-gradient(125deg, transparent 70%, var(--light-blue) 70%, var(--light-blue) 85%, var(--ice-blue) 85%, var(--ice-blue) 86%, var(--light-blue) 86%, var(--light-blue) 90%, transparent 90%);
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -192,12 +240,30 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
     color: var(--white);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3), 0 0 20px rgba(208, 231, 245, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(240, 244, 248, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5), 0 0 30px rgba(208, 231, 245, 0.2);
 }
 
 /* Hero Animation */
@@ -216,6 +282,7 @@ body {
     border-radius: 50%;
     background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent);
     animation: float 6s ease-in-out infinite;
+    mix-blend-mode: screen;
 }
 
 .circle-1 {
@@ -224,6 +291,7 @@ body {
     top: 10%;
     left: 10%;
     animation-delay: 0s;
+    background: radial-gradient(circle, rgba(208, 231, 245, 0.2), transparent);
 }
 
 .circle-2 {
@@ -232,6 +300,7 @@ body {
     top: 60%;
     right: 10%;
     animation-delay: 2s;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent);
 }
 
 .circle-3 {
@@ -240,6 +309,7 @@ body {
     bottom: 10%;
     left: 50%;
     animation-delay: 4s;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.12), transparent);
 }
 
 @keyframes float {
@@ -292,6 +362,34 @@ section {
 /* About Section */
 .about {
     background: var(--medium-blue);
+    position: relative;
+}
+
+/* Add subtle wave pattern for deep sea feeling */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 50px,
+            rgba(6, 182, 212, 0.03) 50px,
+            rgba(6, 182, 212, 0.03) 100px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 50px,
+            rgba(16, 185, 129, 0.02) 50px,
+            rgba(16, 185, 129, 0.02) 100px
+        );
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .about-content {
@@ -327,7 +425,7 @@ section {
 .image-placeholder svg {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.3));
+    filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.3)) drop-shadow(0 0 40px rgba(208, 231, 245, 0.2));
 }
 
 @keyframes pulse {
@@ -342,6 +440,23 @@ section {
 /* Services Section */
 .services {
     background: var(--deep-blue);
+    position: relative;
+}
+
+/* Mountain texture overlay */
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(45deg, transparent 48%, rgba(100, 116, 139, 0.02) 48%, rgba(100, 116, 139, 0.02) 52%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(71, 85, 105, 0.02) 48%, rgba(71, 85, 105, 0.02) 52%, transparent 52%);
+    background-size: 40px 40px;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 .services-grid {
@@ -351,18 +466,37 @@ section {
 }
 
 .service-card {
-    background: var(--medium-blue);
+    background: linear-gradient(145deg, var(--medium-blue), var(--deep-blue));
     padding: var(--spacing-md);
     border-radius: 12px;
     border: 1px solid var(--light-blue);
     transition: all var(--transition-base);
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add icy texture to cards */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(208, 231, 245, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    transition: all var(--transition-slow);
+}
+
+.service-card:hover::before {
+    transform: scale(1.2) rotate(45deg);
 }
 
 .service-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-green);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2), 0 0 60px rgba(208, 231, 245, 0.1);
 }
 
 .service-icon {
@@ -391,6 +525,38 @@ section {
 /* Contact Section */
 .contact {
     background: var(--medium-blue);
+    position: relative;
+}
+
+/* Deep ocean waves pattern */
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: 
+        radial-gradient(ellipse at 50% 100%, rgba(8, 47, 73, 0.4) 0%, transparent 50%),
+        linear-gradient(to bottom, var(--deep-ocean) 0%, transparent 100%);
+    opacity: 0.6;
+}
+
+.contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: 
+        repeating-radial-gradient(
+            circle at 50% 100%,
+            transparent 0px,
+            rgba(6, 182, 212, 0.05) 20px,
+            transparent 40px
+        );
+    opacity: 0.4;
 }
 
 .contact-content {
@@ -432,10 +598,13 @@ section {
 
 /* Contact Form */
 .contact-form {
-    background: var(--deep-blue);
+    background: linear-gradient(135deg, var(--deep-blue), var(--deep-ocean));
     padding: var(--spacing-md);
     border-radius: 12px;
     border: 1px solid var(--light-blue);
+    box-shadow: 0 8px 32px rgba(8, 47, 73, 0.4);
+    position: relative;
+    z-index: 1;
 }
 
 .form-group {
@@ -475,9 +644,26 @@ section {
 
 /* Footer */
 .footer {
-    background: var(--deep-blue);
+    background: linear-gradient(to bottom, var(--deep-blue) 0%, var(--deep-ocean) 100%);
     padding: var(--spacing-lg) 0 var(--spacing-md);
     border-top: 2px solid var(--primary-green);
+    position: relative;
+}
+
+/* Mountain silhouette at footer top */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: 
+        linear-gradient(120deg, transparent 10%, var(--stone-dark) 10%, var(--stone-dark) 20%, transparent 20%),
+        linear-gradient(60deg, transparent 30%, rgba(100, 116, 139, 0.6) 30%, rgba(100, 116, 139, 0.6) 45%, transparent 45%),
+        linear-gradient(135deg, transparent 65%, rgba(71, 85, 105, 0.7) 65%, rgba(71, 85, 105, 0.7) 80%, transparent 80%);
+    opacity: 0.3;
+    pointer-events: none;
 }
 
 .footer-content {
@@ -552,6 +738,13 @@ section {
     padding-top: var(--spacing-md);
     border-top: 1px solid var(--light-blue);
     color: var(--text-gray);
+}
+
+/* Additional Mountain/Nature Elements */
+body {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(8, 47, 73, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(100, 116, 139, 0.2) 0%, transparent 50%);
 }
 
 /* Responsive Design */
