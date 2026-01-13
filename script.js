@@ -88,6 +88,7 @@ if (contactForm) {
         
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
         const message = document.getElementById('message').value;
         
         // Here you would typically send this data to a server
@@ -107,7 +108,7 @@ if (contactForm) {
             z-index: 9999;
             animation: slideInRight 0.5s ease;
         `;
-        successMessage.textContent = 'Thank you for your message! We\'ll get back to you soon.';
+        successMessage.textContent = 'Merci pour votre message ! Nous vous répondrons bientôt.';
         
         document.body.appendChild(successMessage);
         
@@ -189,5 +190,5 @@ window.addEventListener('scroll', () => {
 });
 
 // Console message for developers
-console.log('%cWelcome to Alteryss! 🌱', 'color: #10b981; font-size: 20px; font-weight: bold;');
-console.log('%cBridging Technology and Nature for a Sustainable Future', 'color: #06b6d4; font-size: 14px;');
+console.log('%cBienvenue sur Alteryss ! 🌱', 'color: #10b981; font-size: 20px; font-weight: bold;');
+console.log('%cL\'innovation technologique au service de l\'environnement', 'color: #06b6d4; font-size: 14px;');
