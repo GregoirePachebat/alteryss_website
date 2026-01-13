@@ -14,14 +14,21 @@
                 <h1 class="logo">Alteryss</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#accueil" class="nav-link">Home</a></li>
-                <li><a href="#vision" class="nav-link">Vision</a></li>
-                <li><a href="#missions" class="nav-link">Missions</a></li>
-                <li><a href="#equipe" class="nav-link">Team</a></li>
-                <li><a href="#partenaires" class="nav-link">Partners</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#mentions-legales" class="nav-link">Legal Notice</a></li>
+                <li><a href="#accueil" class="nav-link" data-i18n="nav.home">Home</a></li>
+                <li><a href="#vision" class="nav-link" data-i18n="nav.vision">Vision</a></li>
+                <li><a href="#missions" class="nav-link" data-i18n="nav.missions">Missions</a></li>
+                <li><a href="#equipe" class="nav-link" data-i18n="nav.team">Team</a></li>
+                <li><a href="#partenaires" class="nav-link" data-i18n="nav.partners">Partners</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                <li><a href="#mentions-legales" class="nav-link" data-i18n="nav.legal">Legal Notice</a></li>
             </ul>
+            <div class="language-switcher">
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-option" data-lang="fr">FR</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option" data-lang="en">EN</span>
+                </button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -34,30 +41,30 @@
     <section id="accueil" class="hero">
         <div class="hero-content">
             <h1 class="hero-title"><span class="highlight">Alteryss</span></h1>
-            <p class="hero-subtitle">Technological innovation for human performance</p>
-            <p class="hero-description">We unite engineers and doctors to build and test non-invasive tools for monitoring the human body.</p>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Technological innovation for human performance</p>
+            <p class="hero-description" data-i18n="hero.description">We unite engineers and doctors to build and test non-invasive tools for monitoring the human body.</p>
             
             <!-- Pillars -->
             <div class="pillars-container">
                 <div class="pillar">
-                    <h3>Missions</h3>
-                    <p>Study the human body and develop non-invasive monitoring tools</p>
+                    <h3 data-i18n="hero.pillar1.title">Missions</h3>
+                    <p data-i18n="hero.pillar1.description">Study the human body and develop non-invasive monitoring tools</p>
                 </div>
                 <div class="pillar">
-                    <h3>Expertises</h3>
-                    <p>Technological innovation and sustainable solutions for humans</p>
+                    <h3 data-i18n="hero.pillar2.title">Expertises</h3>
+                    <p data-i18n="hero.pillar2.description">Technological innovation and sustainable solutions for humans</p>
                 </div>
                 <div class="pillar">
-                    <h3>Impacts</h3>
-                    <p>Understand the human body to improve health and performance</p>
+                    <h3 data-i18n="hero.pillar3.title">Impacts</h3>
+                    <p data-i18n="hero.pillar3.description">Understand the human body to improve health and performance</p>
                 </div>
             </div>
             
             <!-- CTAs -->
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-secondary">Contact Us</a>
-                <a href="#equipe" class="btn btn-secondary">Join as a student</a>
-                <a href="#vision" class="btn btn-secondary">Discover the Project</a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="hero.cta1">Contact Us</a>
+                <a href="#equipe" class="btn btn-secondary" data-i18n="hero.cta2">Join as a student</a>
+                <a href="#vision" class="btn btn-secondary" data-i18n="hero.cta3">Discover the Project</a>
             </div>
         </div>
         <div class="hero-animation">
@@ -71,21 +78,21 @@
     <section id="sponsors" class="sponsors">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Sponsors</h2>
+                <h2 class="section-title" data-i18n="sponsors.title">Our Sponsors</h2>
                 <div class="title-underline"></div>
             </div>
             <div class="sponsors-grid">
                 <div class="sponsor-card">
                     <div class="sponsor-icon">👤</div>
-                    <h3>Sponsor Name 1</h3>
-                    <p class="sponsor-role">Position / Organization</p>
-                    <p>Sponsor support message...</p>
+                    <h3 data-i18n="sponsors.sponsor1.name">Sponsor Name 1</h3>
+                    <p class="sponsor-role" data-i18n="sponsors.sponsor1.role">Position / Organization</p>
+                    <p data-i18n="sponsors.sponsor1.message">Sponsor support message...</p>
                 </div>
                 <div class="sponsor-card">
                     <div class="sponsor-icon">👤</div>
-                    <h3>Sponsor Name 2</h3>
-                    <p class="sponsor-role">Position / Organization</p>
-                    <p>Sponsor support message...</p>
+                    <h3 data-i18n="sponsors.sponsor2.name">Sponsor Name 2</h3>
+                    <p class="sponsor-role" data-i18n="sponsors.sponsor2.role">Position / Organization</p>
+                    <p data-i18n="sponsors.sponsor2.message">Sponsor support message...</p>
                 </div>
             </div>
         </div>
@@ -95,31 +102,31 @@
     <section id="vision" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Vision</h2>
+                <h2 class="section-title" data-i18n="vision.title">Vision</h2>
                 <div class="title-underline"></div>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3 class="subsection-title">Project Origin</h3>
-                    <p>Alteryss was born from a shared frustration. Engineers often face regulatory constraints that limit their ability to fully test new sensors and technologies for monitoring the human body, 
+                    <h3 class="subsection-title" data-i18n="vision.origin.title">Project Origin</h3>
+                    <p data-i18n="vision.origin.content">Alteryss was born from a shared frustration. Engineers often face regulatory constraints that limit their ability to fully test new sensors and technologies for monitoring the human body, 
                         while clinicians are frequently unaware of the innovations emerging from engineering laboratories. 
                         Our association was created to bridge this gap by fostering communication and collaboration between these two worlds.</p>
                     
-                    <h3 class="subsection-title">Long term</h3>
-                    <p>We aspire to bridge the gap between engineering and clinical practice by offering
+                    <h3 class="subsection-title" data-i18n="vision.longterm.title">Long term</h3>
+                    <p data-i18n="vision.longterm.content">We aspire to bridge the gap between engineering and clinical practice by offering
                         
                     </p>
                     
-                    <h3 class="subsection-title">Valeurs Structurantes</h3>
+                    <h3 class="subsection-title" data-i18n="vision.values.title">Valeurs Structurantes</h3>
                     <ul class="values-list">
-                        <li><strong>Excellence :</strong> Une approche rigoureuse et professionnelle dans chaque mission</li>
-                        <li><strong>Innovation :</strong> La recherche constante de solutions nouvelles et adaptées</li>
-                        <li><strong>Engagement :</strong> Un dévouement sincère à la cause environnementale</li>
-                        <li><strong>Collaboration :</strong> Le travail en réseau avec tous les acteurs du territoire</li>
+                        <li data-i18n="vision.values.value1"><strong>Excellence :</strong> Une approche rigoureuse et professionnelle dans chaque mission</li>
+                        <li data-i18n="vision.values.value2"><strong>Innovation :</strong> La recherche constante de solutions nouvelles et adaptées</li>
+                        <li data-i18n="vision.values.value3"><strong>Engagement :</strong> Un dévouement sincère à la cause environnementale</li>
+                        <li data-i18n="vision.values.value4"><strong>Collaboration :</strong> Le travail en réseau avec tous les acteurs du territoire</li>
                     </ul>
                     
-                    <h3 class="subsection-title">Ce qui Nous Différencie</h3>
-                    <p>Contrairement aux cabinets traditionnels, Alteryss allie la proximité étudiante à une expertise professionnelle, offrant des solutions sur-mesure à des tarifs accessibles tout en maintenant une qualité de service optimale. Notre double compétence technique et environnementale nous permet d'appréhender les projets dans leur globalité.</p>
+                    <h3 class="subsection-title" data-i18n="vision.difference.title">Ce qui Nous Différencie</h3>
+                    <p data-i18n="vision.difference.content">Contrairement aux cabinets traditionnels, Alteryss allie la proximité étudiante à une expertise professionnelle, offrant des solutions sur-mesure à des tarifs accessibles tout en maintenant une qualité de service optimale. Notre double compétence technique et environnementale nous permet d'appréhender les projets dans leur globalité.</p>
                 </div>
                 <div class="about-image">
                     <div class="image-placeholder">
@@ -136,13 +143,13 @@
     <section id="missions" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Missions / Actions</h2>
+                <h2 class="section-title" data-i18n="missions.title">Missions / Actions</h2>
                 <div class="title-underline"></div>
             </div>
             
             <div class="missions-intro">
-                <h3 class="subsection-title">Nos Missions Passées</h3>
-                <p>Depuis notre création, nous avons mené plusieurs missions d'envergure pour accompagner nos clients dans leurs projets environnementaux et techniques.</p>
+                <h3 class="subsection-title" data-i18n="missions.intro.title">Nos Missions Passées</h3>
+                <p data-i18n="missions.intro.content">Depuis notre création, nous avons mené plusieurs missions d'envergure pour accompagner nos clients dans leurs projets environnementaux et techniques.</p>
             </div>
             
             <div class="services-grid">
@@ -152,8 +159,8 @@
                             <path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
                         </svg>
                     </div>
-                    <h3>Études d'Impact Environnemental</h3>
-                    <p>Analyse complète des impacts environnementaux de vos projets avec recommandations d'amélioration et mesures compensatoires.</p>
+                    <h3 data-i18n="missions.service1.title">Études d'Impact Environnemental</h3>
+                    <p data-i18n="missions.service1.description">Analyse complète des impacts environnementaux de vos projets avec recommandations d'amélioration et mesures compensatoires.</p>
                 </div>
                 
                 <div class="service-card">
@@ -162,8 +169,8 @@
                             <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
                     </div>
-                    <h3>Conseil en Transition Énergétique</h3>
-                    <p>Accompagnement dans la mise en place de solutions énergétiques durables et optimisation de la performance énergétique.</p>
+                    <h3 data-i18n="missions.service2.title">Conseil en Transition Énergétique</h3>
+                    <p data-i18n="missions.service2.description">Accompagnement dans la mise en place de solutions énergétiques durables et optimisation de la performance énergétique.</p>
                 </div>
                 
                 <div class="service-card">
@@ -172,8 +179,8 @@
                             <path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
                         </svg>
                     </div>
-                    <h3>Diagnostic Biodiversité</h3>
-                    <p>Inventaires faune et flore, évaluation des enjeux écologiques et propositions de gestion adaptées.</p>
+                    <h3 data-i18n="missions.service3.title">Diagnostic Biodiversité</h3>
+                    <p data-i18n="missions.service3.description">Inventaires faune et flore, évaluation des enjeux écologiques et propositions de gestion adaptées.</p>
                 </div>
                 
                 <div class="service-card">
@@ -182,8 +189,8 @@
                             <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                         </svg>
                     </div>
-                    <h3>Innovation & R&D</h3>
-                    <p>Développement de solutions technologiques innovantes pour répondre aux défis environnementaux.</p>
+                    <h3 data-i18n="missions.service4.title">Innovation & R&D</h3>
+                    <p data-i18n="missions.service4.description">Développement de solutions technologiques innovantes pour répondre aux défis environnementaux.</p>
                 </div>
                 
                 <div class="service-card">
@@ -192,8 +199,8 @@
                             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
-                    <h3>Formation & Sensibilisation</h3>
-                    <p>Ateliers et formations sur les enjeux environnementaux et les bonnes pratiques de développement durable.</p>
+                    <h3 data-i18n="missions.service5.title">Formation & Sensibilisation</h3>
+                    <p data-i18n="missions.service5.description">Ateliers et formations sur les enjeux environnementaux et les bonnes pratiques de développement durable.</p>
                 </div>
                 
                 <div class="service-card">
@@ -202,16 +209,16 @@
                             <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                         </svg>
                     </div>
-                    <h3>Assistance à Maîtrise d'Ouvrage</h3>
-                    <p>Support technique et environnemental pour la conduite de vos projets d'aménagement durable.</p>
+                    <h3 data-i18n="missions.service6.title">Assistance à Maîtrise d'Ouvrage</h3>
+                    <p data-i18n="missions.service6.description">Support technique et environnemental pour la conduite de vos projets d'aménagement durable.</p>
                 </div>
             </div>
             
             <div class="je-partnership">
                 <div class="je-content">
-                    <h3 class="subsection-title">Partenariat Junior-Entreprise</h3>
-                    <p>Alteryss travaille en partenariat avec la Junior-Entreprise pour proposer des missions étudiantes de qualité. Cette collaboration permet de mobiliser des compétences techniques pointues tout en offrant aux étudiants une expérience professionnelle enrichissante.</p>
-                    <a href="javascript:void(0)" class="btn btn-primary" title="Lien à venir prochainement">Accéder à la plateforme JE</a>
+                    <h3 class="subsection-title" data-i18n="missions.partnership.title">Partenariat Junior-Entreprise</h3>
+                    <p data-i18n="missions.partnership.content">Alteryss travaille en partenariat avec la Junior-Entreprise pour proposer des missions étudiantes de qualité. Cette collaboration permet de mobiliser des compétences techniques pointues tout en offrant aux étudiants une expérience professionnelle enrichissante.</p>
+                    <a href="javascript:void(0)" class="btn btn-primary" title="Lien à venir prochainement" data-i18n="missions.partnership.cta">Accéder à la plateforme JE</a>
                 </div>
             </div>
         </div>
@@ -221,12 +228,12 @@
     <section id="equipe" class="team">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Équipe / Gouvernance</h2>
+                <h2 class="section-title" data-i18n="team.title">Équipe / Gouvernance</h2>
                 <div class="title-underline"></div>
             </div>
             
             <div class="team-intro">
-                <p>Notre équipe est composée d'étudiants passionnés et engagés, issus de formations variées en ingénierie, environnement et management.</p>
+                <p data-i18n="team.intro">Notre équipe est composée d'étudiants passionnés et engagés, issus de formations variées en ingénierie, environnement et management.</p>
             </div>
             
             <div class="committee-photo">
@@ -236,7 +243,7 @@
                         <circle cx="9" cy="7" r="4"></circle>
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>
-                    <p>Photo du comité (à ajouter)</p>
+                    <p data-i18n="team.photo">Photo du comité (à ajouter)</p>
                 </div>
             </div>
             
@@ -247,9 +254,9 @@
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
                     </div>
-                    <h3>Prénom Nom 1</h3>
-                    <p class="member-role">Président(e)</p>
-                    <p class="member-description">Passionné(e) par l'environnement et l'innovation, pilote la stratégie globale de l'association.</p>
+                    <h3 data-i18n="team.member1.name">Prénom Nom 1</h3>
+                    <p class="member-role" data-i18n="team.member1.role">Président(e)</p>
+                    <p class="member-description" data-i18n="team.member1.description">Passionné(e) par l'environnement et l'innovation, pilote la stratégie globale de l'association.</p>
                 </div>
                 
                 <div class="team-member">
@@ -258,9 +265,9 @@
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
                     </div>
-                    <h3>Prénom Nom 2</h3>
-                    <p class="member-role">Vice-Président(e)</p>
-                    <p class="member-description">Expert(e) en gestion de projet, assure le suivi des missions et la coordination des équipes.</p>
+                    <h3 data-i18n="team.member2.name">Prénom Nom 2</h3>
+                    <p class="member-role" data-i18n="team.member2.role">Vice-Président(e)</p>
+                    <p class="member-description" data-i18n="team.member2.description">Expert(e) en gestion de projet, assure le suivi des missions et la coordination des équipes.</p>
                 </div>
                 
                 <div class="team-member">
@@ -269,9 +276,9 @@
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
                     </div>
-                    <h3>Prénom Nom 3</h3>
-                    <p class="member-role">Trésorier(ère)</p>
-                    <p class="member-description">Responsable de la gestion financière et du développement des partenariats économiques.</p>
+                    <h3 data-i18n="team.member3.name">Prénom Nom 3</h3>
+                    <p class="member-role" data-i18n="team.member3.role">Trésorier(ère)</p>
+                    <p class="member-description" data-i18n="team.member3.description">Responsable de la gestion financière et du développement des partenariats économiques.</p>
                 </div>
                 
                 <div class="team-member">
@@ -280,9 +287,9 @@
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
                     </div>
-                    <h3>Prénom Nom 4</h3>
-                    <p class="member-role">Secrétaire</p>
-                    <p class="member-description">Assure la communication interne et externe, gère les relations avec les partenaires.</p>
+                    <h3 data-i18n="team.member4.name">Prénom Nom 4</h3>
+                    <p class="member-role" data-i18n="team.member4.role">Secrétaire</p>
+                    <p class="member-description" data-i18n="team.member4.description">Assure la communication interne et externe, gère les relations avec les partenaires.</p>
                 </div>
                 
                 <div class="team-member">
@@ -291,9 +298,9 @@
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
                     </div>
-                    <h3>Prénom Nom 5</h3>
-                    <p class="member-role">Responsable Technique</p>
-                    <p class="member-description">Expert(e) en solutions technologiques innovantes pour les projets environnementaux.</p>
+                    <h3 data-i18n="team.member5.name">Prénom Nom 5</h3>
+                    <p class="member-role" data-i18n="team.member5.role">Responsable Technique</p>
+                    <p class="member-description" data-i18n="team.member5.description">Expert(e) en solutions technologiques innovantes pour les projets environnementaux.</p>
                 </div>
                 
                 <div class="team-member">
@@ -302,9 +309,9 @@
                             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                         </svg>
                     </div>
-                    <h3>Prénom Nom 6</h3>
-                    <p class="member-role">Responsable Environnement</p>
-                    <p class="member-description">Spécialiste des enjeux écologiques et de la biodiversité, garantit la qualité de nos études.</p>
+                    <h3 data-i18n="team.member6.name">Prénom Nom 6</h3>
+                    <p class="member-role" data-i18n="team.member6.role">Responsable Environnement</p>
+                    <p class="member-description" data-i18n="team.member6.description">Spécialiste des enjeux écologiques et de la biodiversité, garantit la qualité de nos études.</p>
                 </div>
             </div>
         </div>
@@ -314,30 +321,30 @@
     <section id="partenaires" class="partners">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Partenaires / Soutiens</h2>
+                <h2 class="section-title" data-i18n="partners.title">Partenaires / Soutiens</h2>
                 <div class="title-underline"></div>
             </div>
             
             <div class="partners-intro">
-                <p>Alteryss bénéficie du soutien de nombreux partenaires qui croient en notre mission et nous accompagnent dans notre développement.</p>
+                <p data-i18n="partners.intro">Alteryss bénéficie du soutien de nombreux partenaires qui croient en notre mission et nous accompagnent dans notre développement.</p>
             </div>
             
             <div class="je-feedback">
-                <h3 class="subsection-title">Retour sur le Partenariat Junior-Entreprise</h3>
+                <h3 class="subsection-title" data-i18n="partners.feedback.title">Retour sur le Partenariat Junior-Entreprise</h3>
                 <div class="feedback-content">
-                    <p>Notre collaboration avec la Junior-Entreprise a été un véritable catalyseur pour notre développement. Ce partenariat nous permet de mobiliser des compétences étudiantes de haut niveau tout en offrant un cadre professionnel sécurisé pour nos missions.</p>
+                    <p data-i18n="partners.feedback.content">Notre collaboration avec la Junior-Entreprise a été un véritable catalyseur pour notre développement. Ce partenariat nous permet de mobiliser des compétences étudiantes de haut niveau tout en offrant un cadre professionnel sécurisé pour nos missions.</p>
                     <div class="feedback-stats">
                         <div class="stat">
                             <span class="stat-number">X</span>
-                            <span class="stat-label">Missions réalisées</span>
+                            <span class="stat-label" data-i18n="partners.feedback.stat1">Missions réalisées</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">X</span>
-                            <span class="stat-label">Étudiants mobilisés</span>
+                            <span class="stat-label" data-i18n="partners.feedback.stat2">Étudiants mobilisés</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">X%</span>
-                            <span class="stat-label">Satisfaction client</span>
+                            <span class="stat-label" data-i18n="partners.feedback.stat3">Satisfaction client</span>
                         </div>
                     </div>
                 </div>
@@ -352,9 +359,9 @@
                             <line x1="15" y1="9" x2="9" y2="15"></line>
                         </svg>
                     </div>
-                    <h3>Junior-Entreprise</h3>
-                    <p class="partner-type">Partenaire Opérationnel</p>
-                    <p>Collaboration stratégique pour la réalisation de missions étudiantes professionnelles.</p>
+                    <h3 data-i18n="partners.partner1.name">Junior-Entreprise</h3>
+                    <p class="partner-type" data-i18n="partners.partner1.type">Partenaire Opérationnel</p>
+                    <p data-i18n="partners.partner1.description">Collaboration stratégique pour la réalisation de missions étudiantes professionnelles.</p>
                 </div>
                 
                 <div class="partner-card">
@@ -365,9 +372,9 @@
                             <line x1="15" y1="9" x2="9" y2="15"></line>
                         </svg>
                     </div>
-                    <h3>Partenaire 2</h3>
-                    <p class="partner-type">Soutien Institutionnel</p>
-                    <p>Description du partenariat et de la contribution...</p>
+                    <h3 data-i18n="partners.partner2.name">Partenaire 2</h3>
+                    <p class="partner-type" data-i18n="partners.partner2.type">Soutien Institutionnel</p>
+                    <p data-i18n="partners.partner2.description">Description du partenariat et de la contribution...</p>
                 </div>
                 
                 <div class="partner-card">
@@ -378,9 +385,9 @@
                             <line x1="15" y1="9" x2="9" y2="15"></line>
                         </svg>
                     </div>
-                    <h3>Partenaire 3</h3>
-                    <p class="partner-type">Parrainage</p>
-                    <p>Description du parrainage et du soutien apporté...</p>
+                    <h3 data-i18n="partners.partner3.name">Partenaire 3</h3>
+                    <p class="partner-type" data-i18n="partners.partner3.type">Parrainage</p>
+                    <p data-i18n="partners.partner3.description">Description du parrainage et du soutien apporté...</p>
                 </div>
                 
                 <div class="partner-card">
@@ -391,9 +398,9 @@
                             <line x1="15" y1="9" x2="9" y2="15"></line>
                         </svg>
                     </div>
-                    <h3>Partenaire 4</h3>
-                    <p class="partner-type">Partenaire Technique</p>
-                    <p>Soutien technique et expertise spécialisée...</p>
+                    <h3 data-i18n="partners.partner4.name">Partenaire 4</h3>
+                    <p class="partner-type" data-i18n="partners.partner4.type">Partenaire Technique</p>
+                    <p data-i18n="partners.partner4.description">Soutien technique et expertise spécialisée...</p>
                 </div>
             </div>
         </div>
@@ -403,13 +410,13 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Contact / S'impliquer</h2>
+                <h2 class="section-title" data-i18n="contact.title">Contact / S'impliquer</h2>
                 <div class="title-underline"></div>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Rejoignez-nous</h3>
-                    <p>Vous souhaitez nous contacter, devenir partenaire, bénévole, ou apporter votre soutien ? Nous serions ravis d'échanger avec vous.</p>
+                    <h3 data-i18n="contact.join">Rejoignez-nous</h3>
+                    <p data-i18n="contact.description">Vous souhaitez nous contacter, devenir partenaire, bénévole, ou apporter votre soutien ? Nous serions ravis d'échanger avec vous.</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -423,43 +430,43 @@
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            <span>France</span>
+                            <span data-i18n="contact.location">France</span>
                         </div>
                     </div>
                     
                     <div class="involvement-options">
-                        <h4>Comment s'impliquer ?</h4>
+                        <h4 data-i18n="contact.howto.title">Comment s'impliquer ?</h4>
                         <ul>
-                            <li>💼 <strong>Devenir partenaire :</strong> Collaborez avec nous sur des projets innovants</li>
-                            <li>🤝 <strong>Devenir bénévole :</strong> Participez à nos missions et événements</li>
-                            <li>❤️ <strong>Apporter votre soutien :</strong> Soutenez nos actions et notre développement</li>
-                            <li>🎓 <strong>Postulation étudiante :</strong> <a href="javascript:void(0)" class="link-je" title="Lien à venir prochainement">Accéder à la plateforme JE</a></li>
+                            <li data-i18n="contact.howto.partner">💼 <strong>Devenir partenaire :</strong> Collaborez avec nous sur des projets innovants</li>
+                            <li data-i18n="contact.howto.volunteer">🤝 <strong>Devenir bénévole :</strong> Participez à nos missions et événements</li>
+                            <li data-i18n="contact.howto.support">❤️ <strong>Apporter votre soutien :</strong> Soutenez nos actions et notre développement</li>
+                            <li data-i18n="contact.howto.student">🎓 <strong>Postulation étudiante :</strong> <a href="javascript:void(0)" class="link-je" title="Lien à venir prochainement">Accéder à la plateforme JE</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Votre nom" required>
+                            <input type="text" id="name" data-i18n-placeholder="contact.form.name" placeholder="Votre nom" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Votre email" required>
+                            <input type="email" id="email" data-i18n-placeholder="contact.form.email" placeholder="Votre email" required>
                         </div>
                         <div class="form-group">
                             <select id="subject" required>
-                                <option value="">Sélectionnez un sujet</option>
-                                <option value="contact">Demande de renseignements</option>
-                                <option value="partner">Devenir partenaire</option>
-                                <option value="volunteer">Devenir bénévole</option>
-                                <option value="support">Apporter mon soutien</option>
-                                <option value="student">Postulation étudiante</option>
-                                <option value="other">Autre</option>
+                                <option value="" data-i18n="contact.form.subject.default">Sélectionnez un sujet</option>
+                                <option value="contact" data-i18n="contact.form.subject.inquiry">Demande de renseignements</option>
+                                <option value="partner" data-i18n="contact.form.subject.partner">Devenir partenaire</option>
+                                <option value="volunteer" data-i18n="contact.form.subject.volunteer">Devenir bénévole</option>
+                                <option value="support" data-i18n="contact.form.subject.support">Apporter mon soutien</option>
+                                <option value="student" data-i18n="contact.form.subject.student">Postulation étudiante</option>
+                                <option value="other" data-i18n="contact.form.subject.other">Autre</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Votre message" required></textarea>
+                            <textarea id="message" rows="5" data-i18n-placeholder="contact.form.message" placeholder="Votre message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">Envoyer le message</button>
                     </form>
                 </div>
             </div>
@@ -470,21 +477,21 @@
     <section id="mentions-legales" class="legal">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Mentions Légales / RGPD</h2>
+                <h2 class="section-title" data-i18n="legal.title">Mentions Légales / RGPD</h2>
                 <div class="title-underline"></div>
             </div>
             
             <div class="legal-content">
                 <div class="legal-section">
-                    <h3>Éditeur du Site</h3>
+                    <h3 data-i18n="legal.publisher.title">Éditeur du Site</h3>
                     <p><strong>Alteryss</strong></p>
-                    <p>Association loi 1901</p>
+                    <p data-i18n="legal.publisher.type">Association loi 1901</p>
                     <p>Email : contact@alteryss.org</p>
                 </div>
                 
                 <div class="legal-section">
-                    <h3>Hébergement</h3>
-                    <p>Ce site est hébergé par :</p>
+                    <h3 data-i18n="legal.hosting.title">Hébergement</h3>
+                    <p data-i18n="legal.hosting.intro">Ce site est hébergé par :</p>
                     <p>GitHub Pages</p>
                     <p>GitHub, Inc.<br>
                     88 Colin P Kelly Jr St<br>
@@ -493,26 +500,26 @@
                 </div>
                 
                 <div class="legal-section">
-                    <h3>Protection des Données Personnelles (RGPD)</h3>
-                    <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
-                    <p>Les informations collectées via le formulaire de contact sont uniquement destinées à l'usage interne d'Alteryss et ne seront en aucun cas cédées à des tiers.</p>
-                    <p>Pour exercer vos droits, vous pouvez nous contacter à : contact@alteryss.org</p>
+                    <h3 data-i18n="legal.privacy.title">Protection des Données Personnelles (RGPD)</h3>
+                    <p data-i18n="legal.privacy.paragraph1">Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.</p>
+                    <p data-i18n="legal.privacy.paragraph2">Les informations collectées via le formulaire de contact sont uniquement destinées à l'usage interne d'Alteryss et ne seront en aucun cas cédées à des tiers.</p>
+                    <p data-i18n="legal.privacy.paragraph3">Pour exercer vos droits, vous pouvez nous contacter à : contact@alteryss.org</p>
                 </div>
                 
                 <div class="legal-section">
-                    <h3>Cookies</h3>
-                    <p>Ce site n'utilise pas de cookies de tracking ou de publicité. Seuls des cookies techniques nécessaires au bon fonctionnement du site peuvent être utilisés.</p>
+                    <h3 data-i18n="legal.cookies.title">Cookies</h3>
+                    <p data-i18n="legal.cookies.content">Ce site n'utilise pas de cookies de tracking ou de publicité. Seuls des cookies techniques nécessaires au bon fonctionnement du site peuvent être utilisés.</p>
                 </div>
                 
                 <div class="legal-section">
-                    <h3>Propriété Intellectuelle</h3>
-                    <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes) est la propriété exclusive d'Alteryss, à l'exception des mentions particulières.</p>
-                    <p>Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces différents éléments est strictement interdite sans l'accord écrit d'Alteryss.</p>
+                    <h3 data-i18n="legal.ip.title">Propriété Intellectuelle</h3>
+                    <p data-i18n="legal.ip.paragraph1">L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes) est la propriété exclusive d'Alteryss, à l'exception des mentions particulières.</p>
+                    <p data-i18n="legal.ip.paragraph2">Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces différents éléments est strictement interdite sans l'accord écrit d'Alteryss.</p>
                 </div>
                 
                 <div class="legal-section">
-                    <h3>Données en Accès Libre</h3>
-                    <p><em>Nous travaillons actuellement sur une plateforme pour rendre nos données accessibles en open data. Plus d'informations prochainement.</em></p>
+                    <h3 data-i18n="legal.opendata.title">Données en Accès Libre</h3>
+                    <p><em data-i18n="legal.opendata.content">Nous travaillons actuellement sur une plateforme pour rendre nos données accessibles en open data. Plus d'informations prochainement.</em></p>
                 </div>
             </div>
         </div>
@@ -524,22 +531,22 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Alteryss</h3>
-                    <p>L'innovation technologique au service de l'environnement</p>
+                    <p data-i18n="footer.tagline">L'innovation technologique au service de l'environnement</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Navigation</h4>
+                    <h4 data-i18n="footer.navigation">Navigation</h4>
                     <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#vision">Vision</a></li>
-                        <li><a href="#missions">Missions</a></li>
-                        <li><a href="#equipe">Équipe</a></li>
-                        <li><a href="#partenaires">Partenaires</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#mentions-legales">Mentions légales</a></li>
+                        <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+                        <li><a href="#vision" data-i18n="nav.vision">Vision</a></li>
+                        <li><a href="#missions" data-i18n="nav.missions">Missions</a></li>
+                        <li><a href="#equipe" data-i18n="nav.team">Équipe</a></li>
+                        <li><a href="#partenaires" data-i18n="nav.partners">Partenaires</a></li>
+                        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                        <li><a href="#mentions-legales" data-i18n="nav.legal">Mentions légales</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Suivez-nous</h4>
+                    <h4 data-i18n="footer.social">Suivez-nous</h4>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -562,7 +569,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Alteryss. Tous droits réservés. Engagés pour un avenir durable.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 Alteryss. Tous droits réservés. Engagés pour un avenir durable.</p>
             </div>
         </div>
     </footer>
