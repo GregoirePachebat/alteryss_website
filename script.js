@@ -60,11 +60,11 @@ const translations = {
                 value1: "<strong>Excellence:</strong> A rigorous and professional approach in every mission",
                 value2: "<strong>Innovation:</strong> Constant search for new and adapted solutions",
                 value3: "<strong>Commitment:</strong> Sincere dedication to the environmental cause",
-                value4: "<strong>Collaboration:</strong> Networking with all stakeholders in the territory"
+                value4: "<strong>Collaboration:</strong> Making cutting-edge technology accessible to clinicians"
             },
             difference: {
                 title: "What Sets Us Apart",
-                content: "Unlike traditional firms, Alteryss combines student proximity with professional expertise, offering tailor-made solutions at affordable rates while maintaining optimal service quality. Our dual technical and environmental expertise allows us to approach projects comprehensively."
+                content: "Alteryss combines student dynamism with professional expertise from industry and academia to deliver and test cutting edge technology."
             }
         },
         missions: {
@@ -74,28 +74,16 @@ const translations = {
                 content: "Since our creation, we have carried out several major missions to support our clients in their environmental and technical projects."
             },
             service1: {
-                title: "Environmental Impact Studies",
-                description: "Comprehensive analysis of environmental impacts of your projects with improvement recommendations and compensatory measures."
+                title: "Bridge medical and engineering worlds",
+                description: "Create a collaborative platform for engineers and clinicians to share knowledge and innovations."
             },
             service2: {
-                title: "Energy Transition Consulting",
-                description: "Support in implementing sustainable energy solutions and optimizing energy performance."
+                title: "Develop tools to study the human body",
+                description: "Design and test non-invasive monitoring devices for various physiological parameters in every kind of environment."
             },
             service3: {
-                title: "Biodiversity Assessment",
-                description: "Fauna and flora inventories, evaluation of ecological issues, and proposals for adapted management."
-            },
-            service4: {
-                title: "Innovation & R&D",
-                description: "Development of innovative technological solutions to meet environmental challenges."
-            },
-            service5: {
-                title: "Training & Awareness",
-                description: "Workshops and training on environmental issues and sustainable development best practices."
-            },
-            service6: {
-                title: "Project Management Assistance",
-                description: "Technical and environmental support for conducting your sustainable development projects."
+                title: "Conduct applied research",
+                description: "Carry out research projects to validate new technologies and methodologies for human body monitoring in collaboration with professors and students."
             },
             partnership: {
                 title: "Junior-Enterprise Partnership",
