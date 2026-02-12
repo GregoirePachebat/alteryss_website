@@ -14,7 +14,7 @@ const translations = {
             legal: "Legal Notice"
         },
         hero: {
-            subtitle: "Technological innovation for human performance",
+            subtitle: "Explore extreme physiology",
             description: "We unite engineers and doctors to build and test non-invasive tools for monitoring the human body.",
             pillar1: {
                 title: "Missions",
@@ -53,14 +53,13 @@ const translations = {
             },
             longterm: {
                 title: "Long term",
-                content: "We aspire to bridge the gap between engineering and clinical practice by offering"
+                content: "We aspire to bridge the gap between engineering and clinical practice by offering a plateform for exhange and project creation between engineers and clinicians, and explore physiology in extreme environments."
             },
             values: {
                 title: "Core Values",
                 value1: "<strong>Excellence:</strong> A rigorous and professional approach in every mission",
                 value2: "<strong>Innovation:</strong> Constant search for new and adapted solutions",
-                value3: "<strong>Commitment:</strong> Sincere dedication to the environmental cause",
-                value4: "<strong>Collaboration:</strong> Making cutting-edge technology accessible to clinicians"
+                value3: "<strong>Collaboration:</strong> Making cutting-edge technology accessible to clinicians"
             },
             difference: {
                 title: "What Sets Us Apart",
@@ -236,7 +235,7 @@ const translations = {
             legal: "Mentions légales"
         },
         hero: {
-            subtitle: "L'innovation technologique au service de la performance humaine",
+            subtitle: "Explore extreme physiology",
             description: "Nous unissons ingénieurs et médecins pour construire et tester des outils non-invasifs de surveillance du corps humain.",
             pillar1: {
                 title: "Missions",
