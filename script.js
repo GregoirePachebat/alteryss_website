@@ -2,463 +2,136 @@
 // Language Translation System
 // ========================================
 
-const translations = {
-    en: {
-        nav: {
-            home: "Home",
-            vision: "Vision",
-            missions: "Missions",
-            team: "Team",
-            partners: "Partners",
-            contact: "Contact",
-            legal: "Legal Notice"
-        },
-        hero: {
-            subtitle: "Explore extreme physiology",
-            description: "We unite engineers and doctors to build and test non-invasive tools for monitoring the human body.",
-            pillar1: {
-                title: "Missions",
-                description: "Study the human body and develop non-invasive monitoring tools"
-            },
-            pillar2: {
-                title: "Expertises",
-                description: "Technological innovation and sustainable solutions for humans"
-            },
-            pillar3: {
-                title: "Impacts",
-                description: "Understand the human body to improve health and performance"
-            },
-            cta1: "Contact Us",
-            cta2: "Join as a student",
-            cta3: "Discover the Project"
-        },
-        sponsors: {
-            title: "Our Sponsors",
-            sponsor1: {
-                name: "Sponsor Name 1",
-                role: "Position / Organization",
-                message: "Sponsor support message..."
-            },
-            sponsor2: {
-                name: "Sponsor Name 2",
-                role: "Position / Organization",
-                message: "Sponsor support message..."
+// Store loaded translations
+let translations = {};
+let isLoadingTranslations = false;
+let translationsLoadedPromise = null;
+
+// Simple YAML parser for front matter (handles basic key-value pairs and nested objects)
+function parseSimpleYAML(yamlStr) {
+    const lines = yamlStr.split('\n');
+    const result = {};
+    const stack = [{ obj: result, indent: -1 }];
+    
+    for (const line of lines) {
+        if (!line.trim() || line.trim().startsWith('#')) continue;
+        
+        const indent = line.search(/\S/);
+        const trimmed = line.trim();
+        
+        // Handle key-value pairs
+        const colonIndex = trimmed.indexOf(':');
+        if (colonIndex > 0) {
+            const key = trimmed.substring(0, colonIndex).trim();
+            let value = trimmed.substring(colonIndex + 1).trim();
+            
+            // Pop stack until we find the right parent
+            while (stack.length > 1 && stack[stack.length - 1].indent >= indent) {
+                stack.pop();
             }
-        },
-        vision: {
-            title: "Vision",
-            origin: {
-                title: "Project Origin",
-                content: "Alteryss was born from a shared frustration. Engineers often face regulatory constraints that limit their ability to fully test new sensors and technologies for monitoring the human body, while clinicians are frequently unaware of the innovations emerging from engineering laboratories. Our association was created to bridge this gap by fostering communication and collaboration between these two worlds."
-            },
-            longterm: {
-                title: "Long term",
-                content: "We aspire to bridge the gap between engineering and clinical practice by offering a plateform for exhange and project creation between engineers and clinicians, and explore physiology in extreme environments."
-            },
-            values: {
-                title: "Core Values",
-                value1: "<strong>Excellence:</strong> A rigorous and professional approach in every mission",
-                value2: "<strong>Innovation:</strong> Constant search for new and adapted solutions",
-                value3: "<strong>Collaboration:</strong> Making cutting-edge technology accessible to clinicians"
-            },
-            difference: {
-                title: "What Sets Us Apart",
-                content: "Alteryss combines student dynamism with professional expertise from industry and academia to deliver and test cutting edge technology."
-            }
-        },
-        missions: {
-            title: "Missions / Actions",
-            intro: {
-                title: "Our Past Missions",
-                content: "Since our creation, we have carried out several major missions to support our clients in their environmental and technical projects."
-            },
-            service1: {
-                title: "Bridge medical and engineering worlds",
-                description: "Create a collaborative platform for engineers and clinicians to share knowledge and innovations."
-            },
-            service2: {
-                title: "Develop tools to study the human body",
-                description: "Design and test non-invasive monitoring devices for various physiological parameters in every kind of environment."
-            },
-            service3: {
-                title: "Conduct applied research",
-                description: "Carry out research projects to validate new technologies and methodologies for human body monitoring in collaboration with professors and students."
-            },
-            partnership: {
-                title: "Junior-Enterprise Partnership",
-                content: "Alteryss works in partnership with the Junior-Enterprise to offer quality student missions. This collaboration allows us to mobilize high-level technical skills while offering students an enriching professional experience.",
-                cta: "Access the JE platform"
-            }
-        },
-        team: {
-            title: "Team / Governance",
-            intro: "Our team is made up of passionate and committed students from various backgrounds in engineering, environment, and management.",
-            photo: "Committee photo (to be added)",
-            member1: {
-                name: "First Name Last Name 1",
-                role: "President",
-                description: "Passionate about the environment and innovation, leads the overall strategy of the association."
-            },
-            member2: {
-                name: "First Name Last Name 2",
-                role: "Vice President",
-                description: "Expert in project management, ensures mission monitoring and team coordination."
-            },
-            member3: {
-                name: "First Name Last Name 3",
-                role: "Treasurer",
-                description: "Responsible for financial management and development of economic partnerships."
-            },
-            member4: {
-                name: "First Name Last Name 4",
-                role: "Secretary",
-                description: "Ensures internal and external communication, manages partner relations."
-            },
-            member5: {
-                name: "First Name Last Name 5",
-                role: "Technical Manager",
-                description: "Expert in innovative technological solutions for environmental projects."
-            },
-            member6: {
-                name: "First Name Last Name 6",
-                role: "Environment Manager",
-                description: "Specialist in ecological issues and biodiversity, ensures the quality of our studies."
-            }
-        },
-        partners: {
-            title: "Partners / Supporters",
-            intro: "Alteryss benefits from the support of numerous partners who believe in our mission and accompany us in our development.",
-            feedback: {
-                title: "Feedback on Junior-Enterprise Partnership",
-                content: "Our collaboration with the Junior-Enterprise has been a real catalyst for our development. This partnership allows us to mobilize high-level student skills while offering a secure professional framework for our missions.",
-                stat1: "Completed missions",
-                stat2: "Students mobilized",
-                stat3: "Client satisfaction"
-            },
-            partner1: {
-                name: "Junior-Enterprise",
-                type: "Operational Partner",
-                description: "Strategic collaboration for the realization of professional student missions."
-            },
-            partner2: {
-                name: "Partner 2",
-                type: "Institutional Support",
-                description: "Description of the partnership and contribution..."
-            },
-            partner3: {
-                name: "Partner 3",
-                type: "Sponsorship",
-                description: "Description of sponsorship and support provided..."
-            },
-            partner4: {
-                name: "Partner 4",
-                type: "Technical Partner",
-                description: "Technical support and specialized expertise..."
-            }
-        },
-        contact: {
-            title: "Contact / Get Involved",
-            join: "Join Us",
-            description: "Would you like to contact us, become a partner, volunteer, or provide your support? We would be delighted to exchange with you.",
-            location: "France",
-            howto: {
-                title: "How to get involved?",
-                partner: "💼 <strong>Become a partner:</strong> Collaborate with us on innovative projects",
-                volunteer: "🤝 <strong>Become a volunteer:</strong> Participate in our missions and events",
-                support: "❤️ <strong>Provide your support:</strong> Support our actions and development",
-                student: "🎓 <strong>Student application:</strong> <a href='javascript:void(0)' class='link-je' title='Link coming soon'>Access the JE platform</a>"
-            },
-            form: {
-                name: "Your name",
-                email: "Your email",
-                message: "Your message",
-                submit: "Send message",
-                subject: {
-                    default: "Select a subject",
-                    inquiry: "Information request",
-                    partner: "Become a partner",
-                    volunteer: "Become a volunteer",
-                    support: "Provide my support",
-                    student: "Student application",
-                    other: "Other"
+            
+            const parent = stack[stack.length - 1].obj;
+            
+            // Check if value is empty (nested object coming)
+            if (!value) {
+                parent[key] = {};
+                stack.push({ obj: parent[key], indent: indent });
+            } else {
+                // Handle quoted strings
+                if ((value.startsWith('"') && value.endsWith('"')) || 
+                    (value.startsWith("'") && value.endsWith("'"))) {
+                    value = value.slice(1, -1);
                 }
+                parent[key] = value;
             }
-        },
-        legal: {
-            title: "Legal Notice / GDPR",
-            publisher: {
-                title: "Site Publisher",
-                type: "Association under the 1901 law"
-            },
-            hosting: {
-                title: "Hosting",
-                intro: "This site is hosted by:"
-            },
-            privacy: {
-                title: "Personal Data Protection (GDPR)",
-                paragraph1: "In accordance with the General Data Protection Regulation (GDPR) and the Data Protection Act, you have the right to access, rectify, delete, and oppose the personal data concerning you.",
-                paragraph2: "Information collected via the contact form is solely for Alteryss' internal use and will under no circumstances be transferred to third parties.",
-                paragraph3: "To exercise your rights, you can contact us at: contact@alteryss.org"
-            },
-            cookies: {
-                title: "Cookies",
-                content: "This site does not use tracking or advertising cookies. Only technical cookies necessary for the proper functioning of the site may be used."
-            },
-            ip: {
-                title: "Intellectual Property",
-                paragraph1: "All content on this site (texts, images, graphics, logo, icons) is the exclusive property of Alteryss, except for particular mentions.",
-                paragraph2: "Any reproduction, distribution, modification, adaptation, retransmission, or publication of these elements is strictly prohibited without the written consent of Alteryss."
-            },
-            opendata: {
-                title: "Open Access Data",
-                content: "We are currently working on a platform to make our data accessible as open data. More information coming soon."
-            }
-        },
-        footer: {
-            tagline: "Technological innovation for the environment",
-            navigation: "Navigation",
-            social: "Follow us",
-            copyright: "© 2024 Alteryss. All rights reserved. Committed to a sustainable future."
-        },
-        messages: {
-            formSuccess: "Thank you for your message! We will respond to you soon."
-        }
-    },
-    fr: {
-        nav: {
-            home: "Accueil",
-            vision: "Vision",
-            missions: "Missions",
-            team: "Équipe",
-            partners: "Partenaires",
-            contact: "Contact",
-            legal: "Mentions légales"
-        },
-        hero: {
-            subtitle: "Explore extreme physiology",
-            description: "Nous unissons ingénieurs et médecins pour construire et tester des outils non-invasifs de surveillance du corps humain.",
-            pillar1: {
-                title: "Missions",
-                description: "Étudier le corps humain et développer des outils non-invasifs de surveillance"
-            },
-            pillar2: {
-                title: "Expertises",
-                description: "Innovation technologique et solutions durables pour l'humain"
-            },
-            pillar3: {
-                title: "Impacts",
-                description: "Comprendre le corps humain pour améliorer la santé et la performance"
-            },
-            cta1: "Nous contacter",
-            cta2: "Rejoindre en tant qu'étudiant",
-            cta3: "Découvrir le projet"
-        },
-        sponsors: {
-            title: "Nos Sponsors",
-            sponsor1: {
-                name: "Nom Sponsor 1",
-                role: "Poste / Organisation",
-                message: "Message de soutien du sponsor..."
-            },
-            sponsor2: {
-                name: "Nom Sponsor 2",
-                role: "Poste / Organisation",
-                message: "Message de soutien du sponsor..."
-            }
-        },
-        vision: {
-            title: "Vision",
-            origin: {
-                title: "Origine du Projet",
-                content: "Alteryss est né d'une frustration partagée. Les ingénieurs se heurtent souvent à des contraintes réglementaires qui limitent leur capacité à tester pleinement les nouveaux capteurs et technologies de surveillance du corps humain, tandis que les cliniciens ignorent fréquemment les innovations émergeant des laboratoires d'ingénierie. Notre association a été créée pour combler cette lacune en favorisant la communication et la collaboration entre ces deux mondes."
-            },
-            longterm: {
-                title: "Long terme",
-                content: "Nous aspirons à combler le fossé entre l'ingénierie et la pratique clinique en offrant"
-            },
-            values: {
-                title: "Valeurs Structurantes",
-                value1: "<strong>Excellence :</strong> Une approche rigoureuse et professionnelle dans chaque mission",
-                value2: "<strong>Innovation :</strong> La recherche constante de solutions nouvelles et adaptées",
-                value3: "<strong>Engagement :</strong> Un dévouement sincère à la cause environnementale",
-                value4: "<strong>Collaboration :</strong> Le travail en réseau avec tous les acteurs du territoire"
-            },
-            difference: {
-                title: "Ce qui Nous Différencie",
-                content: "Contrairement aux cabinets traditionnels, Alteryss allie la proximité étudiante à une expertise professionnelle, offrant des solutions sur-mesure à des tarifs accessibles tout en maintenant une qualité de service optimale. Notre double compétence technique et environnementale nous permet d'appréhender les projets dans leur globalité."
-            }
-        },
-        missions: {
-            title: "Missions / Actions",
-            intro: {
-                title: "Nos Missions Passées",
-                content: "Depuis notre création, nous avons mené plusieurs missions d'envergure pour accompagner nos clients dans leurs projets environnementaux et techniques."
-            },
-            service1: {
-                title: "Études d'Impact Environnemental",
-                description: "Analyse complète des impacts environnementaux de vos projets avec recommandations d'amélioration et mesures compensatoires."
-            },
-            service2: {
-                title: "Conseil en Transition Énergétique",
-                description: "Accompagnement dans la mise en place de solutions énergétiques durables et optimisation de la performance énergétique."
-            },
-            service3: {
-                title: "Diagnostic Biodiversité",
-                description: "Inventaires faune et flore, évaluation des enjeux écologiques et propositions de gestion adaptées."
-            },
-            service4: {
-                title: "Innovation & R&D",
-                description: "Développement de solutions technologiques innovantes pour répondre aux défis environnementaux."
-            },
-            service5: {
-                title: "Formation & Sensibilisation",
-                description: "Ateliers et formations sur les enjeux environnementaux et les bonnes pratiques de développement durable."
-            },
-            service6: {
-                title: "Assistance à Maîtrise d'Ouvrage",
-                description: "Support technique et environnemental pour la conduite de vos projets d'aménagement durable."
-            },
-            partnership: {
-                title: "Partenariat Junior-Entreprise",
-                content: "Alteryss travaille en partenariat avec la Junior-Entreprise pour proposer des missions étudiantes de qualité. Cette collaboration permet de mobiliser des compétences techniques pointues tout en offrant aux étudiants une expérience professionnelle enrichissante.",
-                cta: "Accéder à la plateforme JE"
-            }
-        },
-        team: {
-            title: "Équipe / Gouvernance",
-            intro: "Notre équipe est composée d'étudiants passionnés et engagés, issus de formations variées en ingénierie, environnement et management.",
-            photo: "Photo du comité (à ajouter)",
-            member1: {
-                name: "Prénom Nom 1",
-                role: "Président(e)",
-                description: "Passionné(e) par l'environnement et l'innovation, pilote la stratégie globale de l'association."
-            },
-            member2: {
-                name: "Prénom Nom 2",
-                role: "Vice-Président(e)",
-                description: "Expert(e) en gestion de projet, assure le suivi des missions et la coordination des équipes."
-            },
-            member3: {
-                name: "Prénom Nom 3",
-                role: "Trésorier(ère)",
-                description: "Responsable de la gestion financière et du développement des partenariats économiques."
-            },
-            member4: {
-                name: "Prénom Nom 4",
-                role: "Secrétaire",
-                description: "Assure la communication interne et externe, gère les relations avec les partenaires."
-            },
-            member5: {
-                name: "Prénom Nom 5",
-                role: "Responsable Technique",
-                description: "Expert(e) en solutions technologiques innovantes pour les projets environnementaux."
-            },
-            member6: {
-                name: "Prénom Nom 6",
-                role: "Responsable Environnement",
-                description: "Spécialiste des enjeux écologiques et de la biodiversité, garantit la qualité de nos études."
-            }
-        },
-        partners: {
-            title: "Partenaires / Soutiens",
-            intro: "Alteryss bénéficie du soutien de nombreux partenaires qui croient en notre mission et nous accompagnent dans notre développement.",
-            feedback: {
-                title: "Retour sur le Partenariat Junior-Entreprise",
-                content: "Notre collaboration avec la Junior-Entreprise a été un véritable catalyseur pour notre développement. Ce partenariat nous permet de mobiliser des compétences étudiantes de haut niveau tout en offrant un cadre professionnel sécurisé pour nos missions.",
-                stat1: "Missions réalisées",
-                stat2: "Étudiants mobilisés",
-                stat3: "Satisfaction client"
-            },
-            partner1: {
-                name: "Junior-Entreprise",
-                type: "Partenaire Opérationnel",
-                description: "Collaboration stratégique pour la réalisation de missions étudiantes professionnelles."
-            },
-            partner2: {
-                name: "Partenaire 2",
-                type: "Soutien Institutionnel",
-                description: "Description du partenariat et de la contribution..."
-            },
-            partner3: {
-                name: "Partenaire 3",
-                type: "Parrainage",
-                description: "Description du parrainage et du soutien apporté..."
-            },
-            partner4: {
-                name: "Partenaire 4",
-                type: "Partenaire Technique",
-                description: "Soutien technique et expertise spécialisée..."
-            }
-        },
-        contact: {
-            title: "Contact / S'impliquer",
-            join: "Rejoignez-nous",
-            description: "Vous souhaitez nous contacter, devenir partenaire, bénévole, ou apporter votre soutien ? Nous serions ravis d'échanger avec vous.",
-            location: "France",
-            howto: {
-                title: "Comment s'impliquer ?",
-                partner: "💼 <strong>Devenir partenaire :</strong> Collaborez avec nous sur des projets innovants",
-                volunteer: "🤝 <strong>Devenir bénévole :</strong> Participez à nos missions et événements",
-                support: "❤️ <strong>Apporter votre soutien :</strong> Soutenez nos actions et notre développement",
-                student: "🎓 <strong>Postulation étudiante :</strong> <a href='javascript:void(0)' class='link-je' title='Lien à venir prochainement'>Accéder à la plateforme JE</a>"
-            },
-            form: {
-                name: "Votre nom",
-                email: "Votre email",
-                message: "Votre message",
-                submit: "Envoyer le message",
-                subject: {
-                    default: "Sélectionnez un sujet",
-                    inquiry: "Demande de renseignements",
-                    partner: "Devenir partenaire",
-                    volunteer: "Devenir bénévole",
-                    support: "Apporter mon soutien",
-                    student: "Postulation étudiante",
-                    other: "Autre"
-                }
-            }
-        },
-        legal: {
-            title: "Mentions Légales / RGPD",
-            publisher: {
-                title: "Éditeur du Site",
-                type: "Association loi 1901"
-            },
-            hosting: {
-                title: "Hébergement",
-                intro: "Ce site est hébergé par :"
-            },
-            privacy: {
-                title: "Protection des Données Personnelles (RGPD)",
-                paragraph1: "Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.",
-                paragraph2: "Les informations collectées via le formulaire de contact sont uniquement destinées à l'usage interne d'Alteryss et ne seront en aucun cas cédées à des tiers.",
-                paragraph3: "Pour exercer vos droits, vous pouvez nous contacter à : contact@alteryss.org"
-            },
-            cookies: {
-                title: "Cookies",
-                content: "Ce site n'utilise pas de cookies de tracking ou de publicité. Seuls des cookies techniques nécessaires au bon fonctionnement du site peuvent être utilisés."
-            },
-            ip: {
-                title: "Propriété Intellectuelle",
-                paragraph1: "L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes) est la propriété exclusive d'Alteryss, à l'exception des mentions particulières.",
-                paragraph2: "Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces différents éléments est strictement interdite sans l'accord écrit d'Alteryss."
-            },
-            opendata: {
-                title: "Données en Accès Libre",
-                content: "Nous travaillons actuellement sur une plateforme pour rendre nos données accessibles en open data. Plus d'informations prochainement."
-            }
-        },
-        footer: {
-            tagline: "L'innovation technologique au service de l'environnement",
-            navigation: "Navigation",
-            social: "Suivez-nous",
-            copyright: "© 2024 Alteryss. Tous droits réservés. Engagés pour un avenir durable."
-        },
-        messages: {
-            formSuccess: "Merci pour votre message ! Nous vous répondrons bientôt."
         }
     }
-};
+    
+    return result;
+}
+
+// Function to parse YAML front matter from markdown content
+function parseFrontMatter(content) {
+    const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/;
+    const match = content.match(frontMatterRegex);
+    
+    if (match) {
+        try {
+            // Parse YAML front matter using simple parser
+            const frontMatter = parseSimpleYAML(match[1]);
+            const body = match[2].trim();
+            return { frontMatter, body };
+        } catch (e) {
+            console.error('Error parsing YAML front matter:', e);
+            return { frontMatter: {}, body: content };
+        }
+    }
+    
+    return { frontMatter: {}, body: content };
+}
+
+// Function to load a single markdown file
+async function loadMarkdownFile(lang, section) {
+    try {
+        const response = await fetch(`content/${lang}/${section}.md`);
+        if (!response.ok) {
+            throw new Error(`Failed to load ${lang}/${section}.md`);
+        }
+        const content = await response.text();
+        const { frontMatter, body } = parseFrontMatter(content);
+        return frontMatter;
+    } catch (error) {
+        console.error(`Error loading ${lang}/${section}.md:`, error);
+        return {};
+    }
+}
+
+// Function to load all translations for a language
+async function loadLanguageTranslations(lang) {
+    const sections = ['nav', 'hero', 'sponsors', 'vision', 'missions', 'team', 'partners', 'contact', 'legal', 'footer', 'messages'];
+    
+    const results = await Promise.all(
+        sections.map(section => loadMarkdownFile(lang, section))
+    );
+    
+    const langTranslations = {};
+    sections.forEach((section, index) => {
+        langTranslations[section] = results[index];
+    });
+    
+    return langTranslations;
+}
+
+// Function to load translations for both languages
+async function loadAllTranslations() {
+    if (isLoadingTranslations) {
+        return translationsLoadedPromise;
+    }
+    
+    isLoadingTranslations = true;
+    translationsLoadedPromise = (async () => {
+        try {
+            const [enTranslations, frTranslations] = await Promise.all([
+                loadLanguageTranslations('en'),
+                loadLanguageTranslations('fr')
+            ]);
+            
+            translations = {
+                en: enTranslations,
+                fr: frTranslations
+            };
+            
+            return translations;
+        } catch (error) {
+            console.error('Error loading translations:', error);
+            return {};
+        } finally {
+            isLoadingTranslations = false;
+        }
+    })();
+    
+    return translationsLoadedPromise;
+}
 
 // Function to get nested translation value
 function getTranslation(lang, key) {
@@ -477,7 +150,10 @@ function getTranslation(lang, key) {
 }
 
 // Function to set language
-function setLanguage(lang) {
+async function setLanguage(lang) {
+    // Ensure translations are loaded
+    await loadAllTranslations();
+    
     // Save language preference
     localStorage.setItem('language', lang);
     
@@ -519,27 +195,27 @@ function setLanguage(lang) {
 }
 
 // Initialize language on page load
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // Get saved language or default to 'en'
     const savedLang = localStorage.getItem('language') || 'en';
-    setLanguage(savedLang);
+    await setLanguage(savedLang);
     
     // Add click handler for language toggle
     const langToggle = document.getElementById('langToggle');
     if (langToggle) {
-        langToggle.addEventListener('click', () => {
+        langToggle.addEventListener('click', async () => {
             const currentLang = localStorage.getItem('language') || 'en';
             const newLang = currentLang === 'en' ? 'fr' : 'en';
-            setLanguage(newLang);
+            await setLanguage(newLang);
         });
     }
     
     // Add click handlers for individual language options
     document.querySelectorAll('.lang-option').forEach(option => {
-        option.addEventListener('click', (e) => {
+        option.addEventListener('click', async (e) => {
             e.stopPropagation();
             const lang = option.getAttribute('data-lang');
-            setLanguage(lang);
+            await setLanguage(lang);
         });
     });
 });
