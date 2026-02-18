@@ -13,7 +13,7 @@ service3:
   title: Mener des recherches appliquées
   description: Réaliser des projets de recherche pour valider de nouvelles technologies et méthodologies de surveillance du corps humain en collaboration avec des professeurs et des étudiants.
 partnership:
-  title: Partenariat Junior-Entreprise
-  content: Alteryss travaille en partenariat avec la Junior-Entreprise pour proposer des missions étudiantes de qualité. Cette collaboration permet de mobiliser des compétences techniques pointues tout en offrant aux étudiants une expérience professionnelle enrichissante.
+  title: Collaboration Junior-Entreprise
+  content: Alteryss travaille en partenariat avec la Junior-Entreprise pour offrir des missions étudiantes de qualité avec une expertise juridique afin d'assurer la protection de toutes les parties.
   cta: Accéder à la plateforme JE
 ---
