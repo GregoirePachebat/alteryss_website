@@ -6,7 +6,7 @@ member1:
   name: Margot Camus
   role: Présidente
 member2:
-  name: Sebastien Lê--Agopyan
+  name: Sébastien Lê--Agopyan
   role: Vice-Président
 member3:
   name: Nathan Itty
