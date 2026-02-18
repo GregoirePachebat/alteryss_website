@@ -71,6 +71,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-sm);
 }
 
 .nav-brand .logo {
@@ -81,6 +82,48 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: 1px;
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.lang-toggle {
+    background: transparent;
+    border: 2px solid var(--primary-green);
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.lang-toggle:hover {
+    background: rgba(16, 185, 129, 0.1);
+    transform: translateY(-2px);
+}
+
+.lang-option {
+    color: var(--text-gray);
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.lang-option.active {
+    color: var(--primary-green);
+    font-weight: 700;
+}
+
+.lang-separator {
+    color: var(--primary-green);
+    font-weight: 300;
 }
 
 .nav-menu {
@@ -679,6 +722,15 @@ section {
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .language-switcher {
+        order: -1;
+    }
+    
+    .lang-toggle {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
     
     .about-content,
