@@ -7,6 +7,49 @@ let translations = {};
 let isLoadingTranslations = false;
 let translationsLoadedPromise = null;
 
+// Simple YAML parser for front matter (handles basic key-value pairs and nested objects)
+function parseSimpleYAML(yamlStr) {
+    const lines = yamlStr.split('\n');
+    const result = {};
+    const stack = [{ obj: result, indent: -1 }];
+    
+    for (const line of lines) {
+        if (!line.trim() || line.trim().startsWith('#')) continue;
+        
+        const indent = line.search(/\S/);
+        const trimmed = line.trim();
+        
+        // Handle key-value pairs
+        const colonIndex = trimmed.indexOf(':');
+        if (colonIndex > 0) {
+            const key = trimmed.substring(0, colonIndex).trim();
+            let value = trimmed.substring(colonIndex + 1).trim();
+            
+            // Pop stack until we find the right parent
+            while (stack.length > 1 && stack[stack.length - 1].indent >= indent) {
+                stack.pop();
+            }
+            
+            const parent = stack[stack.length - 1].obj;
+            
+            // Check if value is empty (nested object coming)
+            if (!value) {
+                parent[key] = {};
+                stack.push({ obj: parent[key], indent: indent });
+            } else {
+                // Handle quoted strings
+                if ((value.startsWith('"') && value.endsWith('"')) || 
+                    (value.startsWith("'") && value.endsWith("'"))) {
+                    value = value.slice(1, -1);
+                }
+                parent[key] = value;
+            }
+        }
+    }
+    
+    return result;
+}
+
 // Function to parse YAML front matter from markdown content
 function parseFrontMatter(content) {
     const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/;
@@ -14,8 +57,8 @@ function parseFrontMatter(content) {
     
     if (match) {
         try {
-            // Parse YAML front matter using js-yaml library
-            const frontMatter = jsyaml.load(match[1]);
+            // Parse YAML front matter using simple parser
+            const frontMatter = parseSimpleYAML(match[1]);
             const body = match[2].trim();
             return { frontMatter, body };
         } catch (e) {
