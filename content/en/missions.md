@@ -13,7 +13,7 @@ service3:
   title: Conduct applied research
   description: Carry out research projects to validate new technologies and methodologies for human body monitoring in collaboration with professors and students.
 partnership:
-  title: Junior-Enterprise Partnership
-  content: Alteryss works in partnership with the Junior-Enterprise to offer quality student missions. This collaboration allows us to mobilize high-level technical skills while offering students an enriching professional experience.
+  title: Junior-Enterprise Collaboration
+  content: Alteryss works in partnership with the Junior-Enterprise to offer quality student missions with legal expertise to ensure protection of all parties.
   cta: Access the JE platform
 ---

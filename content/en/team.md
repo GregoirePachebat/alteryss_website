@@ -3,27 +3,22 @@ title: Team / Governance
 intro: Our team is made up of passionate and committed students from various backgrounds in engineering, environment, and management.
 photo: Committee photo (to be added)
 member1:
-  name: First Name Last Name 1
+  name: Margot Camus
   role: President
-  description: Passionate about the environment and innovation, leads the overall strategy of the association.
 member2:
-  name: First Name Last Name 2
+  name: Sebastien Lê--Agopyan
   role: Vice President
-  description: Expert in project management, ensures mission monitoring and team coordination.
 member3:
-  name: First Name Last Name 3
-  role: Treasurer
-  description: Responsible for financial management and development of economic partnerships.
+  name: Nathan Itty
+  role: Legal
 member4:
-  name: First Name Last Name 4
-  role: Secretary
-  description: Ensures internal and external communication, manages partner relations.
+  name: Jules Tresca
+  role: External relations
 member5:
-  name: First Name Last Name 5
-  role: Technical Manager
-  description: Expert in innovative technological solutions for environmental projects.
+  name: Jonathan Carlucci
+  role: External relations
 member6:
-  name: First Name Last Name 6
-  role: Environment Manager
-  description: Specialist in ecological issues and biodiversity, ensures the quality of our studies.
+  name: Grégoire Pachebat
+  role: IT
+  
 ---
