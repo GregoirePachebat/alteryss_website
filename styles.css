@@ -6,16 +6,16 @@
 }
 
 :root {
-    /* Color Palette - Technological with Nature */
-    --primary-green: #10b981;
-    --dark-green: #059669;
-    --light-green: #34d399;
-    --deep-blue: #0f172a;
-    --medium-blue: #1e293b;
-    --light-blue: #334155;
-    --accent-cyan: #06b6d4;
-    --text-light: #f1f5f9;
-    --text-gray: #cbd5e1;
+    /* Color Palette */
+    --primary-green: #fca311;
+    --dark-green: #e08c00;
+    --light-green: #fdb840;
+    --deep-blue: #000f2b;
+    --medium-blue: #434d6d;
+    --light-blue: #5c6b8a;
+    --accent-cyan: #fdb840;
+    --text-light: #ffffff;
+    --text-gray: #c5cce0;
     --white: #ffffff;
     
     /* Spacing */
@@ -26,7 +26,7 @@
     --spacing-xl: 6rem;
     
     /* Typography */
-    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-primary: 'Packy Great', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
     --font-size-lg: 1.125rem;
@@ -59,7 +59,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(0, 15, 43, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: var(--spacing-sm) 0;
@@ -106,7 +106,7 @@ body {
 }
 
 .lang-toggle:hover {
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(252, 163, 17, 0.1);
     transform: translateY(-2px);
 }
 
@@ -240,15 +240,15 @@ body {
 }
 
 .pillar {
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(252, 163, 17, 0.1);
     padding: var(--spacing-md);
     border-radius: 12px;
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    border: 1px solid rgba(252, 163, 17, 0.3);
     transition: all var(--transition-base);
 }
 
 .pillar:hover {
-    background: rgba(16, 185, 129, 0.15);
+    background: rgba(252, 163, 17, 0.15);
     transform: translateY(-5px);
 }
 
@@ -303,12 +303,12 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
     color: var(--white);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 4px 15px rgba(252, 163, 17, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    box-shadow: 0 6px 20px rgba(252, 163, 17, 0.5);
 }
 
 .btn-secondary {
@@ -337,7 +337,7 @@ body {
 .circle {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.15), transparent);
+    background: radial-gradient(circle, rgba(252, 163, 17, 0.15), transparent);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -474,7 +474,7 @@ section {
 .image-placeholder svg {
     width: 100%;
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(16, 185, 129, 0.3));
+    filter: drop-shadow(0 0 20px rgba(252, 163, 17, 0.3));
 }
 
 @keyframes pulse {
@@ -509,7 +509,7 @@ section {
 .service-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-green);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 10px 30px rgba(252, 163, 17, 0.2);
 }
 
 .service-icon {
@@ -606,7 +606,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.1);
 }
 
 .form-group textarea {
@@ -712,7 +712,7 @@ section {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(15, 23, 42, 0.98);
+    background: rgba(0, 15, 43, 0.98);
         width: 100%;
         text-align: center;
         transition: left var(--transition-base);
@@ -814,7 +814,7 @@ html {
 .sponsor-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-green);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 10px 30px rgba(252, 163, 17, 0.2);
 }
 
 .sponsor-icon {
@@ -927,7 +927,7 @@ html {
 .team-member:hover {
     transform: translateY(-5px);
     border-color: var(--primary-green);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 10px 30px rgba(252, 163, 17, 0.2);
 }
 
 .member-photo {
@@ -1043,7 +1043,7 @@ html {
 .partner-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary-green);
-    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+    box-shadow: 0 10px 30px rgba(252, 163, 17, 0.2);
 }
 
 .partner-logo {
@@ -1130,7 +1130,7 @@ html {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary-green);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.1);
 }
 
 /* Legal Section */
